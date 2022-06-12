@@ -1,0 +1,5 @@
+<section (click)="triggerToggle($event)"  class="card" [ngClass]="{'showBranch': !!open}" [ngStyle]="{'background-color': data?.hasChildren? 'white': 'rgb(230,230,230)', 'cursor': data?.hasChildren? 'pointer': 'initial', 'pointer-events': data?.hasChildren }">
+    <img [src]="data?.img" alt="profile image">
+    <h3>{{data?.name}}</h3>
+    <p>{{data?.jobTitle}}</p>
+</section>

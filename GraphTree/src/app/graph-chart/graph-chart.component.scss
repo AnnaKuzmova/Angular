@@ -1,0 +1,77 @@
+@mixin lineBase($width, $height) {
+    position: absolute;
+    background-color: black;
+}
+
+.child-container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    gap: 100px;//50px half of it
+    transition: all ease-in-out .3s;
+}
+
+.child-container app-graph-chart {
+    position: relative;
+}
+
+.child-container app-graph-chart:not(:first-child, :last-child, :first-child:last-child)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: calc(50% + 50px);
+    height: 50px;
+    border-right: 1px solid black;
+    border-top: 2px solid black;
+} 
+
+.child-container app-graph-chart:not(:first-child, :last-child, :first-child:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: calc(50% + 50px);
+    height: 50px;
+    border-left: 1px solid black;
+    border-top: 2px solid black;
+}
+
+.child-container app-graph-chart:first-child::after {
+    content: '';
+    position: absolute;
+    width: calc(50% + 50px);
+    height: 50px;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-radius: 5px 0 0 0;
+    z-index: -1;
+}
+
+.child-container app-graph-chart:last-child::after {
+    content: '';
+    position: absolute;
+    width: calc(50% + 50px);
+    height: 50px;
+    top: 0;
+    right: 50%;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-radius: 0 5px 0 0;
+    z-index: -1;
+}
+
+.child-container app-graph-chart:first-child:last-child::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 50px;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid black;
+    border-right: none;
+    border-radius: none;
+    border-top: none;
+}

@@ -1,0 +1,57 @@
+:host {
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    width: 220px;
+    height: 200px;
+    margin: 50px auto;
+    padding-top: 80px ;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    cursor: pointer;
+
+    img {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 1;
+    }
+
+    h3 {
+        font-weight: lighter;
+        text-transform: capitalize;
+    }
+    
+    p {
+        font-weight: bold;
+        text-transform: capitalize;
+        color: rgb(69, 69, 69);
+    }
+
+    &.showBranch::after {
+        content: '';
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        width: 50%;
+        height: 50px;
+        border-left: 2px solid black;
+        z-index: 1;
+    }
+}

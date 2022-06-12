@@ -1,0 +1,7 @@
+
+<div>
+    <app-user-card (toggleCards)="open = !open" [data]="user" [open]="open"></app-user-card>
+    <div class="child-container" [ngStyle]="{'max-height': open ? '3000px' : 0, 'display': open ? 'flex':'none' }" *ngIf="user.hasChildren">
+        <app-graph-chart *ngFor="let user of user.children" [user]="user"></app-graph-chart>
+    </div>
+</div>
