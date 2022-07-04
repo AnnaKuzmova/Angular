@@ -196,4 +196,6 @@ export class AppComponent {
 
   panZoomConfig: PanZoomConfig = new PanZoomConfig();
 
+  constructor () {}
+
 }
